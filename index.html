@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linn &amp; Mikael — 29 augusti 2026</title>
+  <meta name="description" content="Vi gifter oss den 29 augusti 2026. Välkommen att fira med oss!" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-floral"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Vi gifter oss</p>
+      <h1 class="hero-names">
+        Linn
+        <span class="hero-ampersand">&amp;</span>
+        Mikael
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-date">Lördagen den 29 augusti 2026</p>
+      <p class="hero-venue">Nydala klosterkyrka &nbsp;·&nbsp; Asa Herrgård</p>
+
+      <!-- COUNTDOWN -->
+      <div class="countdown">
+        <p class="countdown-title">Nedräkning till bröllopet</p>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-days">—</span>
+            <span class="countdown-label">Dagar</span>
+          </div>
+          <div class="countdown-sep">·</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-hours">—</span>
+            <span class="countdown-label">Timmar</span>
+          </div>
+          <div class="countdown-sep">·</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-minutes">—</span>
+            <span class="countdown-label">Minuter</span>
+          </div>
+          <div class="countdown-sep">·</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-seconds">—</span>
+            <span class="countdown-label">Sekunder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WELCOME SECTION -->
+  <main>
+    <div class="section text-center" style="max-width: 700px; margin: 0 auto 80px;">
+      <p class="section-subtitle">Välkommen</p>
+      <h2 class="section-title">Vi är så glada att du är med oss!</h2>
+      <div class="section-divider" style="margin: 20px auto 28px;"></div>
+      <p class="prose" style="font-size: 20px; text-align: center; color: var(--color-text-light);">
+        På denna sida hittar du all information du behöver inför vår stora dag.
+        Vi ser fram emot att fira med er alla!
+      </p>
+    </div>
+
+    <!-- QUICK INFO CARDS -->
+    <div class="card-grid">
+      <a href="brollopet.html" class="card" style="text-decoration: none; color: inherit;">
+        <p class="section-subtitle mb-16">Ceremonin</p>
+        <h3 class="section-title mb-8" style="font-size: 26px;">Bröllopet</h3>
+        <p style="font-family: var(--font-body); font-size: 14px; color: var(--color-text-light); line-height: 1.7;">
+          Vigseln äger rum klockan 12:00 i Nydala klosterkyrka.<br />Mottagningen börjar klockan 14:30 på Asa Herrgård. <!-- QUICK INFO CARDS -->
+        </p>
+      </a>
+      <a href="info.html" class="card" style="text-decoration: none; color: inherit;">
+        <p class="section-subtitle mb-16">Praktiskt</p>
+        <h3 class="section-title mb-8" style="font-size: 26px;">Info</h3>
+        <p style="font-family: var(--font-body); font-size: 14px; color: var(--color-text-light); line-height: 1.7;">
+          Klädkod: Cocktail Attire. Hotellprislista tillgänglig.<br />Vuxenfest — undantag för syskonbarn.
+        </p>
+      </a>
+      <a href="osa.html" class="card" style="text-decoration: none; color: inherit;">
+        <p class="section-subtitle mb-16">Tradition &amp; kultur</p>
+        <h3 class="section-title mb-8" style="font-size: 26px;">Kambodjansk Ceremoni</h3>
+        <p style="font-family: var(--font-body); font-size: 14px; color: var(--color-text-light); line-height: 1.7;">
+          Lär dig mer om de tre kambodjanska bröllopsceremonierna som ingår i vår stora dag.
+        </p>
+      </a>
+    </div>
+
+    <!-- STORY TEASER -->
+    <div class="highlight-box mt-48">
+      <h2>Vår historia</h2>
+      <p>Hur det hela började — läs om resan som förde oss hit.</p>
+      <a href="var-historia.html" class="btn btn-gold mt-24" style="margin-top: 28px;">Läs vår historia</a>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="nav.js"></script>
+  <script>
+    // Countdown to August 29, 2026 at 12:00
+    const weddingDate = new Date('2026-08-29T12:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        document.querySelector('.countdown').innerHTML =
+          '<p style="font-family: var(--font-display); font-size: 28px; color: var(--color-gold); font-style: italic;">Vi är gifta! 🎉</p>';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
